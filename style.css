@@ -1,0 +1,286 @@
+
+/* Mengatur seluruh halaman */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: linear-gradient(
+        135deg,
+        #fce4ec,
+        #fff0f5,
+        #f8dce7
+    );
+
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Container utama */
+.container {
+    width: 100%;
+    max-width: 850px;
+}
+
+/* Kartu To Do List */
+.todo-card {
+    background: #fffafb;
+    padding: 55px 60px;
+    border-radius: 20px;
+    box-shadow: 0 10px 35px rgba(180, 80, 110, 0.12);
+}
+
+/* Judul */
+h1 {
+    font-size: 43px;
+    color: #6d4050;
+    margin-bottom: 45px;
+    font-weight: bold;
+}
+
+/* Form tambah tugas */
+#todo-form {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+}
+
+/* Kotak input */
+#todo-input {
+    flex: 1;
+    min-width: 0;
+    height: 55px;
+
+    padding: 0 20px;
+
+    background: #7d4b5d;
+    color: #ffffff;
+
+    border: 2px solid #d58da5;
+    border-radius: 12px;
+
+    outline: none;
+    font-size: 15px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+
+    transition: 0.3s;
+}
+
+/* Warna placeholder */
+#todo-input::placeholder {
+    color: #f3cbd8;
+}
+
+/* Efek ketika diklik */
+#todo-input:focus {
+    border-color: #e99ab5;
+    background: #8b5669;
+
+    box-shadow: 0 0 12px rgba(233, 154, 181, 0.25);
+}
+
+/* Tombol tambah */
+#add-button {
+    height: 55px;
+    padding: 0 25px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        #e58aa7,
+        #d96f92
+    );
+
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#add-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 18px rgba(217, 111, 146, 0.3);
+}
+
+/* Peringatan input */
+#warning {
+    color: #d85c79;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    margin: 8px 0;
+    min-height: 18px;
+}
+
+/* Daftar tugas */
+#todo-list {
+    list-style: none;
+    margin-top: 20px;
+}
+
+/* Kotak masing-masing tugas */
+.todo-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    width: 100%;
+    padding: 18px 20px;
+    margin-bottom: 13px;
+
+    background: linear-gradient(
+        135deg,
+        #8d596c,
+        #754454
+    );
+
+    border: 1px solid #c9829b;
+    border-left: 4px solid #e58aa7;
+    border-radius: 13px;
+
+    box-shadow: 0 5px 15px rgba(130, 70, 90, 0.12);
+
+    transition: 0.3s ease;
+}
+
+/* Efek ketika kursor diarahkan */
+.todo-item:hover {
+    background: linear-gradient(
+        135deg,
+        #9a6376,
+        #815060
+    );
+
+    border-color: #ee9fba;
+    transform: translateX(3px);
+}
+
+/* Checkbox tugas */
+.todo-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+
+    accent-color: #e58aa7;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+/* Tulisan tugas */
+.task-text {
+    flex: 1;
+    min-width: 0;
+
+    color: #fff0f5;
+    font-size: 15px;
+    overflow-wrap: anywhere;
+}
+
+/* Jika tugas sudah selesai */
+.task-text.completed {
+    text-decoration: line-through;
+    color: #d9aebb;
+}
+
+/* Tombol hapus */
+.delete-button {
+    background: rgba(255, 255, 255, 0.08);
+    border: none;
+    border-radius: 8px;
+
+    color: #f0c1cf;
+    font-size: 22px;
+
+    width: 30px;
+    height: 30px;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.delete-button:hover {
+    background: rgba(255, 105, 140, 0.18);
+    color: #ff8fab;
+}
+
+/* Statistik */
+.statistics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #f0dce3;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: #8a6873;
+    font-size: 13px;
+}
+
+.stat-item strong {
+    font-size: 23px;
+    color: #d66f91;
+}
+
+/* Tampilan HP */
+@media (max-width: 600px) {
+    body {
+        padding: 15px;
+    }
+
+    .todo-card {
+        padding: 30px 20px;
+        border-radius: 16px;
+    }
+
+    h1 {
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+
+    #todo-form {
+        gap: 5px;
+    }
+
+    #todo-input {
+        font-size: 15px;
+        padding: 12px 5px;
+    }
+
+    #add-button {
+        padding: 12px 18px;
+        font-size: 15px;
+    }
+
+    .todo-item {
+        font-size: 15px;
+    }
+
+    .statistics {
+        gap: 5px;
+    }
+
+    .stat-item {
+        font-size: 11px;
+    }
+
+    .stat-item strong {
+        font-size: 20px;
+    }
+}
+
